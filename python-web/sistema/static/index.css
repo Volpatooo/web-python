@@ -1,0 +1,57 @@
+body {
+    background-color:  blueviolet;
+    color: aliceblue;
+}
+
+button:hover {
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    transform: scale(1.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.menu-lateral {
+    width: 200px; /* Largura do menu */
+    height: 60vh; /* Altura total da tela */
+    background-color: #6a0dad; /* Cor roxa */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+.menu-lateral h2 {
+    margin: 0 0 20px 0; /* Margem do título */
+}
+
+.menu-lateral ul {
+    list-style-type: none; /* Remove marcadores */
+    padding: 0; /* Remove espaçamento padrão */
+}
+
+.menu-lateral li {
+    margin: 15px 0; /* Margem entre os itens */
+}
+
+.menu-lateral a {
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Cor do link */
+    padding: 10px; /* Espaçamento interno do link */
+    display: block; /* Faz o link ocupar toda a largura */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.menu-lateral a:hover {
+    background-color: #9b59b6; /* Cor de fundo ao passar o mouse */
+}
+
+
+
+
+

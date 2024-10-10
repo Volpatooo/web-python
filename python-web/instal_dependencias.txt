@@ -1,0 +1,14 @@
+chegou em casa comandos:
+
+env é o ambiente
+
+py -m venv env
+env\Scripts\activate
+pip install django ou se ja tiver o requiriments é so dar um pip install -r requirements.txt
+django-admin startproject setup .
+django-admin startapp sistema
+py .\manage.py runserver # faz o sistema rodar
+
+  
+pip install -r requirements.txt vai instalar as dependencias ou se for um projeto novo
+
