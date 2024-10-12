@@ -8,7 +8,16 @@ pip install django ou se ja tiver o requiriments é so dar um pip install -r req
 django-admin startproject setup .
 django-admin startapp sistema
 py .\manage.py runserver # faz o sistema rodar
+pip freeze .\requirements.txt add ao arquivo requirements as instalacoes necessarias
 
   
 pip install -r requirements.txt vai instalar as dependencias ou se for um projeto novo
 
+py manage.py makemigrations cria o arquivo que irá criar as tabelas
+
+py manage.py migrate cria a tabela em si 
+
+py manage.py shell
+from steamfake.models import Categoria
+Categoria.objects.create(nome="FPS")
+select * from steamfake_categoria;

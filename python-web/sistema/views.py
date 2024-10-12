@@ -30,14 +30,53 @@ def contato(request: HttpRequest) -> HttpResponse:
 def calculadora(request: HttpRequest) -> HttpResponse:
     return render(request, "calculadora.html", context={})
 
-
+# request.GET é o método da requisição
+# request.GET a informação vai na url (https://localhost:8000/sistema/calcular?nmr1=0%nmr2=21)
+# request.POST a informação vai por de baixo dos panos (https://localhost:8000/sistema/calcular)
+# .get é utilizado para obter um valor nesse caso do html
 def calcular(request: HttpRequest) -> HttpResponse:
     nmr1 = int(request.GET.get("nmr1"))
     nmr2 = int(request.GET.get("nmr2"))
+
     soma = nmr1 + nmr2
+    
+    if nmr1 > nmr2:
+        maior = "primeiro Número"
+    else:
+        maior = "Número Dois"
+
     dados_para_html = {
-        'soma': soma
+        'soma': soma,
+        'maior': maior,
+        'nmr1': nmr1,
+        'nmr2': nmr2,
     }
     return render(request, "resultados.html", context=dados_para_html)
+
+
+def aluno(request: HttpRequest) -> HttpResponse:
+    return render(request, "aluno.html", context={})
+
+def calcula_media(request: HttpRequest) -> HttpResponse:
+    nota1 = float(request.GET.get("nota1").replace(",", "."))
+    nota2 = float(request.GET.get("nota2").replace(",", "."))
+    nota3 = float(request.GET.get("nota3").replace(",", "."))
+
+    media = (nota1 + nota2 + nota3) / 3
+
+    if media > 7:
+        status = "Aluno aprovado"
+    elif media < 4:
+        status = "Aluno reprovado"
+    else:
+        status = "Aluno em Exame"
+    
+    dados_para_html = {
+        'media': media, # o que esta entre aspas tem que ser igual ao que esta no resultados.html
+        'status': status
+    }
+    return render(request, "resultados.html", context=dados_para_html)
+
+
     
 

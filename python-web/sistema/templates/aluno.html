@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno Média</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'index_media.css' %}">
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <form action="/sistema/calcula-media">
+        <label for="nota1">Nota 1: </label>
+        <input type="text" id="nota1" name="nota1">
+        <label for="nota2">Nota 2: </label>
+        <input type="text" id="nota2" name="nota2">
+        <label for="nota1">Nota 3: </label>
+        <input type="text" id="nota3" name="nota3">
+        <button type="submit">Calcular Média</button>
+    </form>
+</body>
+</html>
