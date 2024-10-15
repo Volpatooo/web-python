@@ -13,7 +13,7 @@ pip freeze .\requirements.txt add ao arquivo requirements as instalacoes necessa
   
 pip install -r requirements.txt vai instalar as dependencias ou se for um projeto novo
 
-py manage.py makemigrations cria o arquivo que irá criar as tabelas
+py manage.py makemigrations cria o arquivo que irá criar as tabelas cria o arquivo 0001_initial.py
 
 py manage.py migrate cria a tabela em si 
 
