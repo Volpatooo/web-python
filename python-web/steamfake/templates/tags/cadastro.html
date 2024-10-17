@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1 class="title">
+    Cadastro de Tag
+</h1>
+<form action="/steamfake/tag/cadastrar" method="post">
+    {% csrf_token %}
+    <div class="field">
+        <label class="label" for="nome">Nome</label>
+        <div class="control">
+            <input class="input" type="text" placeholder="Insira o nome da Tag..." name="nome" id="nome">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Descrição</label>
+        <div class="control">
+            <textarea class="textarea is-link" type="text" placeholder="Insira uma Descrição..." name="descricao"
+                id="descricao" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link" type="submit">Cadastrar</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

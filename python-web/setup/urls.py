@@ -21,6 +21,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sistema', include("sistema.urls")),
-    path('', RedirectView.as_view(url='/sistema', permanent=False)), # faz com que só acessando olocal host já apareça a função index
-    path('steamfake/', include('steamfake.urls'))
+    # path('', RedirectView.as_view(url='/sistema', permanent=False)), # faz com que só acessando olocal host já apareça a função index
+    path('steamfake/', include('steamfake.urls')),
+    path('', RedirectView.as_view(url='/steamfake', permanent=False)) # qundo acessamos o local host ele ja redireciona o steamfake automaticamente
 ]

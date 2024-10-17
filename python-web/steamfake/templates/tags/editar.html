@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Editar Tag
+            </h1>
+            <form action="/steamfake/tag/editado/{{tag.pk}}" method="post">
+                {% csrf_token %}
+                <div class="field">
+                    <label class="label">Nome</label>
+                    <label class="label">Descrição</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Insira o nome da Tag..." name="nome"
+                            value="{{categoria.nome}}">
+                        <textarea class="textarea is-link" type="text" placeholder="Insira a descricao..." name="descricao"
+                            value="{{tag.descricao}}" id="descricao" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" type="submit">Editar</button>
+                    </div>
+                </div>
+            </form>
+{% endblock %}
+
