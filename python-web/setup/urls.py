@@ -14,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
@@ -25,3 +27,6 @@ urlpatterns = [
     path('steamfake/', include('steamfake.urls')),
     path('', RedirectView.as_view(url='/steamfake', permanent=False)) # qundo acessamos o local host ele ja redireciona o steamfake automaticamente
 ]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

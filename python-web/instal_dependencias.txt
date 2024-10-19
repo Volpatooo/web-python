@@ -21,3 +21,9 @@ py manage.py shell
 from steamfake.models import Categoria
 Categoria.objects.create(nome="FPS")
 select * from steamfake_categoria;
+
+
+sempre abrir a pasta o vscode na pasta e qe esta o projeto qnd abrir o vscode prcurar a pasta em que estão os projetos
+
+
+get serve para o ususario ver os dados na tela e post serve para ele alterar os dados

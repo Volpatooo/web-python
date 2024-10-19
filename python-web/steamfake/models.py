@@ -14,6 +14,16 @@ class Tag(models.Model):
 
      def __str__(self):
           return self.nome, self.descricao
+     
+
+class Jogo(models.Model):
+    nome = models.CharField(max_length=50)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    valor = models.DecimalField(decimal_places=2, max_digits=9)
+    data_lancamento = models.DateField()
+    foto_capa = models.ImageField(upload_to="jogos_capa", null=True)
+    desenvolvedora = models.CharField(max_length=100, null=True)
+    descricao = models.TextField()
           
 
 
